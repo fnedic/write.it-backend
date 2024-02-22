@@ -22,10 +22,10 @@ public class NoteService {
             newNote.setTitle(note.getTitle());
             newNote.setContent(note.getContent());
             newNote.setState(true);
-            if (note.getCategory() != null || note.getCategory() != "") {
+            if (note.getCategory() != null || note.getCategory() == "") {
                 newNote.setCategory(note.getCategory());
             } else {
-                newNote.setCategory("");
+                newNote.setCategory("General");
             }
             noteRepository.save(newNote);
         } catch (Exception e) {
