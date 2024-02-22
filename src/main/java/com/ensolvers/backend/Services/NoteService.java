@@ -22,7 +22,11 @@ public class NoteService {
             newNote.setTitle(note.getTitle());
             newNote.setContent(note.getContent());
             newNote.setState(true);
-            newNote.setCategory(note.getCategory());
+            if (note.getCategory() != null || note.getCategory() != "") {
+                newNote.setCategory(note.getCategory());
+            } else {
+                newNote.setCategory("");
+            }
             noteRepository.save(newNote);
         } catch (Exception e) {
             throw new AppException(e.getMessage(), HttpStatus.BAD_REQUEST);
