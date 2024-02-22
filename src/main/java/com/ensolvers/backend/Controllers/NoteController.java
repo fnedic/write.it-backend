@@ -43,15 +43,6 @@ public class NoteController {
         }
     }
 
-    @GetMapping("get-categories")
-    public ResponseEntity<List<String>> getCategories () throws AppException {
-        try {
-            return new ResponseEntity<>(noteService.getCategories(), HttpStatus.OK);
-        } catch (Exception e) {
-            throw new AppException(e.getMessage(), HttpStatus.BAD_REQUEST);
-        }
-    }
-
     @GetMapping("get-note/{id}")
     public ResponseEntity<?> getNote (@PathVariable String id) throws AppException {
         try {

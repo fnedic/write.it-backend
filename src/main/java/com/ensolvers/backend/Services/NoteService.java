@@ -56,13 +56,6 @@ public class NoteService {
             throw new Exception(e);        }
     }
 
-    public List<String> getCategories () throws Exception {
-        try {
-            return noteRepository.findAllCategories();
-        } catch (Exception e) {
-            throw new Exception(e);        }
-    }
-
     public void deleteNote (String id) throws Exception {
         try {
             noteRepository.deleteById(id);
